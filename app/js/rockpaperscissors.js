@@ -69,11 +69,12 @@ function playToFive() {
   console.log('Let\'s play Rock Paper Scissors');
   var playerWins = 0;
   var computerWins = 0;
-  var playerMove = getPlayerMove();
-  var computerMove = getComputerMove();
-  var winner = getWinner(playerMove,computerMove);
 
-while (playerWins < 5 || computerWins < 5){
+while (playerWins < 5 && computerWins < 5){
+
+    var playerMove = getPlayerMove();
+    var computerMove = getComputerMove();
+    var winner = getWinner(playerMove,computerMove);
   
   if (winner === 'player') {
     playerWins += 1;
@@ -94,6 +95,6 @@ while (playerWins < 5 || computerWins < 5){
     console.log('This is a tie.');
     console.log('The score is currently ' + playerWins + ' to ' + computerWins);
   }
-  return [playerWins, computerWins];
 }
+return [playerWins, computerWins];
 }
